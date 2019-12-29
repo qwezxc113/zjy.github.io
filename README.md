@@ -178,29 +178,135 @@ def Endpoint_detection(wave_data, energy, Zero) :
     for data in C:
         count.append(data * 256)
 return count
+
+
 ## gui界面
 pyqt5：Qt是一套跨平台的C ++库，它们实现了高级API，可以访问现代桌面和移动系统的许多方面。其中包括定位和定位服务，多媒体，NFC和蓝牙连接，基于Chromium的Web浏览器以及传统的UI开发。
 PyQt5是Qt v5的一套全面的Python绑定。它实现为超过35个扩展模块，并使Python能够在所有支持的平台（包括iOS和Android）上用作C ++的替代应用程序开发语言。
 PyQt5也可以嵌入到基于C ++的应用程序中，以允许这些应用程序的用户配置或增强这些应用程序的功能。
 QTDesigner：Qt Designer是Qt工具，用于使用Qt Widgets设计和构建图形用户界面（GUI）。可按照所见即所得（WYSIWYG）的方式编写和自定义窗口或对话框，并使用不同的样式和分辨率对其进行测试。
 使用Qt信号和插槽机制，使用Qt Designer创建的小部件和表单与编程代码无缝集成，因此可以轻松地将行为分配给图形元素。Qt Designer中设置的所有属性都可以在代码中动态更改。此外，小部件升级和自定义插件等功能允许在Qt Designer中使用自己的组件。
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(500, 600)
+        MainWindow.setMinimumSize(QtCore.QSize(500, 600))
+        MainWindow.setMaximumSize(QtCore.QSize(500, 600))
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 190, 62, 251))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.label_4 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout_2.addWidget(self.label_4)
+        self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_2.addWidget(self.label_3)
+        self.label = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label.setObjectName("label")
+        self.verticalLayout_2.addWidget(self.label)
+        self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_2.addWidget(self.label_2)
+        self.horizontalSlider = QtWidgets.QSlider(self.centralwidget)
+        self.horizontalSlider.setGeometry(QtCore.QRect(300, 480, 160, 20))
+        self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
+        self.horizontalSlider.setObjectName("horizontalSlider")
+        self.horizontalSlider.setRange(0,200)
+        self.horizontalSlider_2 = QtWidgets.QSlider(self.centralwidget)
+        self.horizontalSlider_2.setGeometry(QtCore.QRect(300, 520, 160, 20))
+        self.horizontalSlider_2.setOrientation(QtCore.Qt.Horizontal)
+        self.horizontalSlider_2.setObjectName("horizontalSlider_2")
+        self.horizontalSlider_2.setRange(2, 4)
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setGeometry(QtCore.QRect(250, 210, 113, 30))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_2.setGeometry(QtCore.QRect(250, 340, 113, 30))
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_3.setGeometry(QtCore.QRect(250, 270, 113, 30))
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_4.setGeometry(QtCore.QRect(250, 400, 113, 30))
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(230, 480, 51, 21))
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(230, 520, 51, 21))
+        self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(300, 460, 54, 12))
+        self.label_7.setText("")
+        self.label_7.setObjectName("label_7")
+        self.label_8 = QtWidgets.QLabel(self.centralwidget)
+        self.label_8.setGeometry(QtCore.QRect(300, 510, 54, 12))
+        self.label_8.setText("")
+        self.label_8.setObjectName("label_8")
+        self.label_9 = QtWidgets.QLabel(self.centralwidget)
+        self.label_9.setGeometry(QtCore.QRect(140, 10, 211, 131))
+        self.label_9.setStyleSheet("image: url(:/新前缀/apple.gif);")
+        self.label_9.setText("")
+        self.label_9.setObjectName("label_9")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(150, 100, 90, 50))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(270, 100, 90, 50))
+        self.pushButton_2.setObjectName("pushButton_2")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 500, 23))
+        self.menubar.setObjectName("menubar")
+        self.menuFile = QtWidgets.QMenu(self.menubar)
+        self.menuFile.setObjectName("menuFile")
+        self.menuView = QtWidgets.QMenu(self.menubar)
+        self.menuView.setObjectName("menuView")
+        MainWindow.setMenuBar(self.menubar)
+        self.actionOpen_file = QtWidgets.QAction(MainWindow)
+        self.actionOpen_file.setObjectName("actionOpen_file")
+        self.actionExit = QtWidgets.QAction(MainWindow)
 
-### 结论
+
+        self.actionExit.setObjectName("actionExit")
+
+        self.actionShow_chart = QtWidgets.QAction(MainWindow)
+        self.actionShow_chart.setObjectName("actionShow_chart")
+        self.actionAsd_a = QtWidgets.QAction(MainWindow)
+        self.actionAsd_a.setObjectName("actionAsd_a")
+        self.actionDisplay_zero_crossing_signal = QtWidgets.QAction(MainWindow)
+        self.actionDisplay_zero_crossing_signal.setObjectName("actionDisplay_zero_crossing_signal")
+        self.actionDisplay_frequency_domain_signal = QtWidgets.QAction(MainWindow)
+        self.actionDisplay_frequency_domain_signal.setObjectName("actionDisplay_frequency_domain_signal")
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionOpen_file)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionExit)
+        self.menuView.addAction(self.actionShow_chart)
+        self.menuView.addAction(self.actionDisplay_frequency_domain_signal)
+        self.menuView.addAction(self.actionAsd_a)
+        self.menuView.addAction(self.actionDisplay_zero_crossing_signal)
+        self.menubar.addAction(self.menuFile.menuAction())
+        self.menubar.addAction(self.menuView.menuAction())
+
+        self.retranslateUi(MainWindow)
+        self.link(MainWindow)
+        self.label_7.setNum(0)
+        self.label_8.setNum(2)
+        self.horizontalSlider_2.valueChanged['int'].connect(self.label_8.setNum)
+        self.horizontalSlider.valueChanged['int'].connect(self.label_7.setNum)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+**结论** 
 音频识别正确率较高。在识别连续按键音时，若音频文件中各按键音的间隔时间过短，则识别错误率普遍较高。在音频文件较为理想的情况下，识别正确率高。一些杂音的存在易导致识别错误。在打开GUI页面调用函数时，经常出现页面卡死现象，且识别速度时快时慢。
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
 ### Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/qwezxc113/zjy.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
