@@ -20,8 +20,6 @@
 1、	单个按键音识别
 
 (1)  fttc
-# path为文件路径
-# 输出为x频率信号的自变量，yf2是频率数据，framrate为采样率，nframes为采样点数，yt为单声道的时域数据
 def  fftc(path):
     # 打开wav文件 ，open返回一个的是一个Wave_read类的实例，通过调用它的方法读取WAV文件的格式和数据。
     file = wave.open(path, "rb")
@@ -146,8 +144,6 @@ def Endpoint_detection(wave_data, energy, Zero) :
 		if flag == 1 and energy[i] < MH :
             A.append(i)
             flag = 0
-
- # 利用较小能量阈值 ML 进行第二步能量检测
     for j in range(len(A)) :
         i = A[j]
         if j % 2 == 1 :
